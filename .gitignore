@@ -1,0 +1,16 @@
+### My ignore list ###
+/build/
+/.gradle/
+
+### default ignore list ###
+/target
+/classes
+/checkouts
+pom.xml
+pom.xml.asc
+#*.jar
+#*.class
+/.lein-*
+/.nrepl-port
+.hgignore
+.hg/

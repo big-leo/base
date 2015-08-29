@@ -1,0 +1,42 @@
+buildscript {
+    repositories { 
+        maven { url "http://clojars.org/repo" } 
+        mavenCentral()
+    }
+    dependencies {
+        classpath "clojuresque:clojuresque:1.7.0" 
+    }
+}
+
+apply plugin: 'clojure'
+
+clojure.aotCompile = true
+
+repositories {
+    clojarsRepo()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.clojure:clojure:1.6.0"
+}
+
+jar
+{
+    manifest.attributes("Main-Class": "base.core")
+}
+
+uberjar
+{
+    manifest.attributes("Main-Class": "base.core")
+}
+
+apply plugin: 'application'
+
+uberjar.enabled = true
+
+//mainClassName = "base.core"
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
